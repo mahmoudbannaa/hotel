@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.HttpClientErrorException;
+
 import org.springframework.web.client.RestTemplate;
 
 
@@ -22,15 +22,15 @@ public class OffersServiceImpl implements OffersService {
     private String url;
 
     @Override
-    public ResponseEntity<OffersSearchResult> getOffersSearchResult() {
+    public OffersSearchResult getOffersSearchResult() {
 
-        try {
-            return new RestTemplate().exchange(url, HttpMethod.GET, null, OffersSearchResult.class);
+        logger.info("calling getOffersSearchResult service method");
 
-        } catch (HttpClientErrorException e) {
 
-            e.printStackTrace();
-            return new ResponseEntity<OffersSearchResult>(e.getStatusCode());
-        }
+            return new RestTemplate()
+                    .exchange(url, HttpMethod.GET, null, OffersSearchResult.class)
+                    .getBody();
+
+
     }
 }
