@@ -13,6 +13,7 @@ angular.module('hotels')
                 function(response) {
                     $scope.loading = false;
                     $scope.hotels = response.offers.Hotel;
+                    $scope.currency = response.offerInfo.currency;
                 },
                 function(response) {
                     $scope.loading = false;

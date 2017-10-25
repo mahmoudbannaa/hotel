@@ -51,7 +51,32 @@
                         <h5>Name :
                         {{ hotel.hotelInfo.hotelName }}
                         </h5>
+                        <h5>City :
+                            {{ hotel.hotelInfo.hotelCity }}
+                        </h5>
+                    </div>
+                </div>
 
+                <div class="small-box bg-info">
+                    <div class="inner">
+
+                        <h4>Prices</h4>
+
+                        <h5>AVG Price :
+                            {{ hotel.hotelPricingInfo.averagePriceValue }}
+                            {{ currency}}
+                        </h5>
+                        <h5>Total Price :
+                            {{ hotel.hotelPricingInfo.totalPriceValue }}
+                            {{ currency}}
+                        </h5>
+                        <h5>Original Price / Night :
+                            {{ hotel.hotelPricingInfo.originalPricePerNight }}
+                            {{ currency}}
+                        </h5>
+                        <h5>Saving:
+                            {{ hotel.hotelPricingInfo.percentSavings }} %
+                        </h5>
                     </div>
 
 
