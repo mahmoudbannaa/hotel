@@ -15,7 +15,7 @@ in order to setup and run the app you need the following :
    
     mvn clean package
     
-5- If the application build successfuly execute onr of the following command to run the application
+5- If the application build successfuly execute one of the following command to run the application
     
     java -jar target/hotels-1.0.0.jar 
     mvn spring-boot:run
